@@ -1,21 +1,20 @@
 package com.felipe.cursomc.resources.exceptions;
 
 import java.io.Serializable;
+import java.time.Instant;
 
 public class StandardError implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	private Instant timeStamp;
 	private Integer status;
+	private String error;
 	private String msg;
-	private Long timeStamp;
+	private String path;
 	
-	public StandardError(Integer status, String msg, Long timeStamp) {
-		super();
-		this.status = status;
-		this.msg = msg;
-		this.timeStamp = timeStamp;
-	}
+	public StandardError() {}
 
+	
 	public Integer getStatus() {
 		return status;
 	}
@@ -32,13 +31,32 @@ public class StandardError implements Serializable {
 		this.msg = msg;
 	}
 
-	public Long getTimeStamp() {
+	public Instant getTimeStamp() {
 		return timeStamp;
 	}
+	
+	public String getError() {
+		return error;
+	}
 
-	public void setTimeStamp(Long timeStamp) {
+	public void setError(String error) {
+		this.error = error;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public void setTimeStamp(Instant timeStamp) {
 		this.timeStamp = timeStamp;
 	}
+
+
+	
 	
 
 }
